@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Prestações</title>
+</head>
+<body>
+    <h1>Calculadora de Prestações</h1>
+    
+    <label for="valorCompra">Informe o valor da compra:</label>
+    <input type="number" id="valorCompra" step="any">
+    <br><br>
+    
+    <button onclick="calcularPrestacoes()">Calcular Prestações</button>
+    
+    <p id="resultado"></p>
+    
+    <script>
+        function calcularPrestacoes() {
+            // Obtendo o valor da compra informado pelo usuário
+            const valorCompra = parseFloat(document.getElementById("valorCompra").value);
+            
+            // Calculando o valor de cada prestação (em 5 vezes sem juros)
+            const valorPrestacao = valorCompra / 5;
+            
+            // Exibindo o resultado formatado
+            document.getElementById("resultado").innerText = 
+                `O valor de cada prestação é R$ ${valorPrestacao.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

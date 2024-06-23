@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Soma de Números</title>
+</head>
+<body>
+    <h1>Calculadora de Soma de Números de 1 a 15</h1>
+    
+    <button onclick="calcularSoma()">Calcular Soma</button>
+    
+    <p id="resultado"></p>
+    
+    <script>
+        function calcularSoma() {
+            // Variável para armazenar a soma dos números de 1 a 15
+            let soma = 0;
+            
+            // Loop de 1 a 15 para calcular a soma
+            for (let i = 1; i <= 15; i++) {
+                soma += i; // Acumula o valor de i na variável soma
+            }
+            
+            // Exibe o resultado na página HTML
+            document.getElementById("resultado").innerText = 
+                `A soma dos números de 1 a 15 é: ${soma}`;
+        }
+    </script>
+</body>
+</html>

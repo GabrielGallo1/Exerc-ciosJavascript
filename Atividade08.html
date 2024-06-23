@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Valor Total com IPI</title>
+</head>
+<body>
+    <h1>Calculadora de Valor Total com IPI</h1>
+    
+    <label for="ipi">Porcentagem do IPI (%):</label>
+    <input type="number" id="ipi" step="0.01">
+    <br><br>
+    
+    <label for="codigo1">Código da Peça 1:</label>
+    <input type="text" id="codigo1">
+    <label for="valorUnitario1">Valor Unitário da Peça 1:</label>
+    <input type="number" id="valorUnitario1" step="0.01">
+    <label for="quantidade1">Quantidade de Peças 1:</label>
+    <input type="number" id="quantidade1">
+    <br><br>
+    
+    <label for="codigo2">Código da Peça 2:</label>
+    <input type="text" id="codigo2">
+    <label for="valorUnitario2">Valor Unitário da Peça 2:</label>
+    <input type="number" id="valorUnitario2" step="0.01">
+    <label for="quantidade2">Quantidade de Peças 2:</label>
+    <input type="number" id="quantidade2">
+    <br><br>
+    
+    <button onclick="calcularValorTotal()">Calcular Valor Total</button>
+    
+    <p id="resultado"></p>
+    
+    <script>
+        function calcularValorTotal() {
+            // Obtendo os valores dos inputs
+            const ipi = parseFloat(document.getElementById("ipi").value);
+            const codigo1 = document.getElementById("codigo1").value;
+            const valorUnitario1 = parseFloat(document.getElementById("valorUnitario1").value);
+            const quantidade1 = parseInt(document.getElementById("quantidade1").value);
+            const codigo2 = document.getElementById("codigo2").value;
+            const valorUnitario2 = parseFloat(document.getElementById("valorUnitario2").value);
+            const quantidade2 = parseInt(document.getElementById("quantidade2").value);
+            
+            // Calculando o valor total com IPI
+            const valorTotal = (valorUnitario1 * quantidade1 + valorUnitario2 * quantidade2) * (ipi / 100 + 1);
+            
+            // Exibindo o resultado
+            document.getElementById("resultado").innerText = 
+                `Valor total a ser pago para as peças ${codigo1} e ${codigo2}: R$ ${valorTotal.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

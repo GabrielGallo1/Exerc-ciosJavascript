@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cálculo de Médias</title>
+</head>
+<body>
+    <h1>Cálculo de Médias</h1>
+    
+    <button onclick="calcularMedias()">Calcular Médias</button>
+    
+    <p id="resultado"></p>
+    
+    <script>
+        function calcularMedias() {
+            // Números dos primeiros conjuntos
+            const numeros1 = [8, 9, 7];
+            const numeros2 = [4, 5, 6];
+            
+            // Função para calcular a média aritmética
+            function calcularMedia(numeros) {
+                const soma = numeros.reduce((acc, num) => acc + num, 0);
+                return soma / numeros.length;
+            }
+            
+            // Calculando as médias
+            const media1 = calcularMedia(numeros1);
+            const media2 = calcularMedia(numeros2);
+            
+            // Calculando a soma das duas médias
+            const somaMedias = media1 + media2;
+            
+            // Calculando a média das médias
+            const mediaDasMedias = somaMedias / 2;
+            
+            // Exibindo os resultados
+            document.getElementById("resultado").innerText = 
+                "Média dos números 8, 9 e 7: " + media1.toFixed(2) + "\n" +
+                "Média dos números 4, 5 e 6: " + media2.toFixed(2) + "\n" +
+                "Soma das duas médias: " + somaMedias.toFixed(2) + "\n" +
+                "Média das médias: " + mediaDasMedias.toFixed(2);
+        }
+    </script>
+</body>
+</html>

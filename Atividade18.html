@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Identificar Pessoa Mais Nova</title>
+</head>
+<body>
+    <h1>Identificar Pessoa Mais Nova de 10 Pessoas</h1>
+    
+    <p>Insira o nome e a idade das 10 pessoas abaixo:</p>
+    
+    <div id="pessoas">
+        <div>
+            <input type="text" placeholder="Nome" id="nome1">
+            <input type="number" placeholder="Idade" id="idade1" step="1">
+        </div>
+        <br>
+        <div>
+            <input type="text" placeholder="Nome" id="nome2">
+            <input type="number" placeholder="Idade" id="idade2" step="1">
+        </div>
+        <br>
+        <div>
+            <input type="text" placeholder="Nome" id="nome3">
+            <input type="number" placeholder="Idade" id="idade3" step="1">
+        </div>
+        <br>
+        <div>
+            <input type="text" placeholder="Nome" id="nome4">
+            <input type="number" placeholder="Idade" id="idade4" step="1">
+        </div>
+        <br>
+        <div>
+            <input type="text" placeholder="Nome" id="nome5">
+            <input type="number" placeholder="Idade" id="idade5" step="1">
+        </div>
+        <br>
+        <div>
+            <input type="text" placeholder="Nome" id="nome6">
+            <input type="number" placeholder="Idade" id="idade6" step="1">
+        </div>
+        <br>
+        <div>
+            <input type="text" placeholder="Nome" id="nome7">
+            <input type="number" placeholder="Idade" id="idade7" step="1">
+        </div>
+        <br>
+        <div>
+            <input type="text" placeholder="Nome" id="nome8">
+            <input type="number" placeholder="Idade" id="idade8" step="1">
+        </div>
+        <br>
+        <div>
+            <input type="text" placeholder="Nome" id="nome9">
+            <input type="number" placeholder="Idade" id="idade9" step="1">
+        </div>
+        <br>
+        <div>
+            <input type="text" placeholder="Nome" id="nome10">
+            <input type="number" placeholder="Idade" id="idade10" step="1">
+        </div>
+        <br>
+    </div>
+    
+    <button onclick="identificarPessoaMaisNova()">Identificar Pessoa Mais Nova</button>
+    
+    <p id="resultado"></p>
+    
+    <script>
+        function identificarPessoaMaisNova() {
+            // Array para armazenar os nomes e idades das 10 pessoas
+            const pessoas = [
+                { nome: document.getElementById("nome1").value, idade: parseInt(document.getElementById("idade1").value) },
+                { nome: document.getElementById("nome2").value, idade: parseInt(document.getElementById("idade2").value) },
+                { nome: document.getElementById("nome3").value, idade: parseInt(document.getElementById("idade3").value) },
+                { nome: document.getElementById("nome4").value, idade: parseInt(document.getElementById("idade4").value) },
+                { nome: document.getElementById("nome5").value, idade: parseInt(document.getElementById("idade5").value) },
+                { nome: document.getElementById("nome6").value, idade: parseInt(document.getElementById("idade6").value) },
+                { nome: document.getElementById("nome7").value, idade: parseInt(document.getElementById("idade7").value) },
+                { nome: document.getElementById("nome8").value, idade: parseInt(document.getElementById("idade8").value) },
+                { nome: document.getElementById("nome9").value, idade: parseInt(document.getElementById("idade9").value) },
+                { nome: document.getElementById("nome10").value, idade: parseInt(document.getElementById("idade10").value) }
+            ];
+            
+            // Variáveis para armazenar a idade mínima e o nome correspondente
+            let idadeMinima = Infinity;
+            let nomeMaisNovo = "";
+            
+            // Iterando sobre o array de pessoas para encontrar a idade mínima
+            for (let i = 0; i < pessoas.length; i++) {
+                if (pessoas[i].idade < idadeMinima) {
+                    idadeMinima = pessoas[i].idade;
+                    nomeMaisNovo = pessoas[i].nome;
+                }
+            }
+            
+            // Exibindo o resultado
+            document.getElementById("resultado").innerText = 
+                `A pessoa mais nova é: ${nomeMaisNovo}`;
+        }
+    </script>
+</body>
+</html>

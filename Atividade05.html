@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Classe Eleitoral</title>
+</head>
+<body>
+    <h1>Verificação de Classe Eleitoral</h1>
+    
+    <label for="idade">Digite a sua idade:</label>
+    <input type="number" id="idade">
+    <button onclick="verificarClasseEleitoral()">Verificar Classe Eleitoral</button>
+    
+    <p id="resultado"></p>
+    
+    <script>
+        function verificarClasseEleitoral() {
+            // Obtendo o valor do input
+            const idade = parseInt(document.getElementById("idade").value);
+            
+            let mensagem;
+            
+            // Verificando a classe eleitoral
+            if (idade < 16) {
+                mensagem = "Não eleitor (abaixo de 16 anos).";
+            } else if (idade >= 18 && idade < 65) {
+                mensagem = "Eleitor obrigatório (entre 18 e menor de 65 anos).";
+            } else if ((idade >= 16 && idade < 18) || idade >= 65) {
+                mensagem = "Eleitor facultativo (de 16 até 18 anos e maior de 65 anos, inclusive).";
+            }
+            
+            // Exibindo o resultado
+            document.getElementById("resultado").innerText = mensagem;
+        }
+    </script>
+</body>
+</html>

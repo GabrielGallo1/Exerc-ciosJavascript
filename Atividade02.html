@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verificação de Divisibilidade</title>
+</head>
+<body>
+    <h1>Verificação de Divisibilidade</h1>
+    
+    <label for="numero">Digite um número:</label>
+    <input type="number" id="numero">
+    <button onclick="verificarDivisibilidade()">Verificar</button>
+    
+    <p id="resultado"></p>
+    
+    <script>
+        function verificarDivisibilidade() {
+            // Obtendo o valor do input
+            const numero = parseInt(document.getElementById("numero").value);
+            
+            // Verificando a divisibilidade
+            let mensagem;
+            if (numero % 10 === 0) {
+                mensagem = "O número é divisível por 10.";
+            } else if (numero % 5 === 0) {
+                mensagem = "O número é divisível por 5.";
+            } else if (numero % 2 === 0) {
+                mensagem = "O número é divisível por 2.";
+            } else {
+                mensagem = "O número não é divisível por 10, 5 ou 2.";
+            }
+            
+            // Exibindo o resultado
+            document.getElementById("resultado").innerText = mensagem;
+        }
+    </script>
+</body>
+</html>

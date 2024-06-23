@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Calorias</title>
+</head>
+<body>
+    <h1>Calculadora de Calorias de Refeição</h1>
+    
+    <label for="prato">Escolha o prato:</label>
+    <select id="prato">
+        <option value="180">Vegetariano</option>
+        <option value="230">Peixe</option>
+        <option value="250">Frango</option>
+        <option value="350">Carne</option>
+    </select>
+    <br>
+    
+    <label for="sobremesa">Escolha a sobremesa:</label>
+    <select id="sobremesa">
+        <option value="75">Abacaxi</option>
+        <option value="110">Sorvete diet</option>
+        <option value="170">Mousse diet</option>
+        <option value="200">Mousse chocolate</option>
+    </select>
+    <br>
+    
+    <label for="bebida">Escolha a bebida:</label>
+    <select id="bebida">
+        <option value="20">Chá</option>
+        <option value="70">Suco de laranja</option>
+        <option value="100">Suco de melão</option>
+        <option value="65">Refrigerante diet</option>
+    </select>
+    <br>
+    
+    <button onclick="calcularCalorias()">Calcular Calorias</button>
+    
+    <p id="resultado"></p>
+    
+    <script>
+        function calcularCalorias() {
+            // Obtendo os valores selecionados
+            const prato = document.getElementById("prato").value;
+            const sobremesa = document.getElementById("sobremesa").value;
+            const bebida = document.getElementById("bebida").value;
+            
+            // Calculando as calorias totais
+            const totalCalorias = parseInt(prato) + parseInt(sobremesa) + parseInt(bebida);
+            
+            // Exibindo o resultado
+            document.getElementById("resultado").innerText = "A quantidade total de calorias da refeição é: " + totalCalorias + " cal";
+        }
+    </script>
+</body>
+</html>

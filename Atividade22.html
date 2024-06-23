@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contagem de Números entre 0 e 100</title>
+</head>
+<body>
+    <h1>Contagem de Números entre 0 e 100</h1>
+    
+    <p>Insira 20 números abaixo:</p>
+    
+    <div id="numeros">
+        <input type="number" id="num1" step="any"> <!-- Input para o número 1 -->
+        <br><br>
+        <input type="number" id="num2" step="any"> <!-- Input para o número 2 -->
+        <br><br>
+        <input type="number" id="num3" step="any"> <!-- Input para o número 3 -->
+        <br><br>
+        <input type="number" id="num4" step="any"> <!-- Input para o número 4 -->
+        <br><br>
+        <input type="number" id="num5" step="any"> <!-- Input para o número 5 -->
+        <br><br>
+        <input type="number" id="num6" step="any"> <!-- Input para o número 6 -->
+        <br><br>
+        <input type="number" id="num7" step="any"> <!-- Input para o número 7 -->
+        <br><br>
+        <input type="number" id="num8" step="any"> <!-- Input para o número 8 -->
+        <br><br>
+        <input type="number" id="num9" step="any"> <!-- Input para o número 9 -->
+        <br><br>
+        <input type="number" id="num10" step="any"> <!-- Input para o número 10 -->
+        <br><br>
+        <input type="number" id="num11" step="any"> <!-- Input para o número 11 -->
+        <br><br>
+        <input type="number" id="num12" step="any"> <!-- Input para o número 12 -->
+        <br><br>
+        <input type="number" id="num13" step="any"> <!-- Input para o número 13 -->
+        <br><br>
+        <input type="number" id="num14" step="any"> <!-- Input para o número 14 -->
+        <br><br>
+        <input type="number" id="num15" step="any"> <!-- Input para o número 15 -->
+        <br><br>
+        <input type="number" id="num16" step="any"> <!-- Input para o número 16 -->
+        <br><br>
+        <input type="number" id="num17" step="any"> <!-- Input para o número 17 -->
+        <br><br>
+        <input type="number" id="num18" step="any"> <!-- Input para o número 18 -->
+        <br><br>
+        <input type="number" id="num19" step="any"> <!-- Input para o número 19 -->
+        <br><br>
+        <input type="number" id="num20" step="any"> <!-- Input para o número 20 -->
+        <br><br>
+    </div>
+    
+    <button onclick="contarNumerosEntre0e100()">Contar Números entre 0 e 100</button>
+    
+    <p id="resultado"></p>
+    
+    <script>
+        function contarNumerosEntre0e100() {
+            // Array para armazenar os números digitados
+            const numeros = [
+                parseFloat(document.getElementById("num1").value),
+                parseFloat(document.getElementById("num2").value),
+                parseFloat(document.getElementById("num3").value),
+                parseFloat(document.getElementById("num4").value),
+                parseFloat(document.getElementById("num5").value),
+                parseFloat(document.getElementById("num6").value),
+                parseFloat(document.getElementById("num7").value),
+                parseFloat(document.getElementById("num8").value),
+                parseFloat(document.getElementById("num9").value),
+                parseFloat(document.getElementById("num10").value),
+                parseFloat(document.getElementById("num11").value),
+                parseFloat(document.getElementById("num12").value),
+                parseFloat(document.getElementById("num13").value),
+                parseFloat(document.getElementById("num14").value),
+                parseFloat(document.getElementById("num15").value),
+                parseFloat(document.getElementById("num16").value),
+                parseFloat(document.getElementById("num17").value),
+                parseFloat(document.getElementById("num18").value),
+                parseFloat(document.getElementById("num19").value),
+                parseFloat(document.getElementById("num20").value)
+            ];
+            
+            // Contador para contar quantos números estão entre 0 e 100
+            let contadorEntre0e100 = 0;
+            
+            // Verificando cada número para determinar se está entre 0 e 100
+            for (let i = 0; i < numeros.length; i++) {
+                if (numeros[i] >= 0 && numeros[i] <= 100) {
+                    contadorEntre0e100++;
+                }
+            }
+            
+            // Exibindo o resultado
+            document.getElementById("resultado").innerText = 
+                `Quantidade de números entre 0 e 100: ${contadorEntre0e100}`;
+        }
+    </script>
+</body>
+</html>

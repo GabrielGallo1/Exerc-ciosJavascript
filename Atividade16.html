@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Média de Idades</title>
+</head>
+<body>
+    <h1>Calculadora de Média de Idades de 20 Pessoas</h1>
+    
+    <p>Insira as idades das 20 pessoas abaixo:</p>
+    
+    <input type="number" id="idade1" step="1"> <!-- Input para a idade da pessoa 1 -->
+    <br><br>
+    <input type="number" id="idade2" step="1"> <!-- Input para a idade da pessoa 2 -->
+    <br><br>
+    <input type="number" id="idade3" step="1"> <!-- Input para a idade da pessoa 3 -->
+    <br><br>
+    <input type="number" id="idade4" step="1"> <!-- Input para a idade da pessoa 4 -->
+    <br><br>
+    <input type="number" id="idade5" step="1"> <!-- Input para a idade da pessoa 5 -->
+    <br><br>
+    <input type="number" id="idade6" step="1"> <!-- Input para a idade da pessoa 6 -->
+    <br><br>
+    <input type="number" id="idade7" step="1"> <!-- Input para a idade da pessoa 7 -->
+    <br><br>
+    <input type="number" id="idade8" step="1"> <!-- Input para a idade da pessoa 8 -->
+    <br><br>
+    <input type="number" id="idade9" step="1"> <!-- Input para a idade da pessoa 9 -->
+    <br><br>
+    <input type="number" id="idade10" step="1"> <!-- Input para a idade da pessoa 10 -->
+    <br><br>
+    <input type="number" id="idade11" step="1"> <!-- Input para a idade da pessoa 11 -->
+    <br><br>
+    <input type="number" id="idade12" step="1"> <!-- Input para a idade da pessoa 12 -->
+    <br><br>
+    <input type="number" id="idade13" step="1"> <!-- Input para a idade da pessoa 13 -->
+    <br><br>
+    <input type="number" id="idade14" step="1"> <!-- Input para a idade da pessoa 14 -->
+    <br><br>
+    <input type="number" id="idade15" step="1"> <!-- Input para a idade da pessoa 15 -->
+    <br><br>
+    <input type="number" id="idade16" step="1"> <!-- Input para a idade da pessoa 16 -->
+    <br><br>
+    <input type="number" id="idade17" step="1"> <!-- Input para a idade da pessoa 17 -->
+    <br><br>
+    <input type="number" id="idade18" step="1"> <!-- Input para a idade da pessoa 18 -->
+    <br><br>
+    <input type="number" id="idade19" step="1"> <!-- Input para a idade da pessoa 19 -->
+    <br><br>
+    <input type="number" id="idade20" step="1"> <!-- Input para a idade da pessoa 20 -->
+    <br><br>
+    
+    <button onclick="calcularMediaIdades()">Calcular Média das Idades</button>
+    
+    <p id="resultado"></p>
+    
+    <script>
+        function calcularMediaIdades() {
+            // Array para armazenar as idades das 20 pessoas
+            const idades = [
+                parseInt(document.getElementById("idade1").value),
+                parseInt(document.getElementById("idade2").value),
+                parseInt(document.getElementById("idade3").value),
+                parseInt(document.getElementById("idade4").value),
+                parseInt(document.getElementById("idade5").value),
+                parseInt(document.getElementById("idade6").value),
+                parseInt(document.getElementById("idade7").value),
+                parseInt(document.getElementById("idade8").value),
+                parseInt(document.getElementById("idade9").value),
+                parseInt(document.getElementById("idade10").value),
+                parseInt(document.getElementById("idade11").value),
+                parseInt(document.getElementById("idade12").value),
+                parseInt(document.getElementById("idade13").value),
+                parseInt(document.getElementById("idade14").value),
+                parseInt(document.getElementById("idade15").value),
+                parseInt(document.getElementById("idade16").value),
+                parseInt(document.getElementById("idade17").value),
+                parseInt(document.getElementById("idade18").value),
+                parseInt(document.getElementById("idade19").value),
+                parseInt(document.getElementById("idade20").value)
+            ];
+            
+            // Calculando a média das idades
+            const somaIdades = idades.reduce((acc, idade) => acc + idade, 0);
+            const mediaIdades = somaIdades / idades.length;
+            
+            // Exibindo o resultado
+            document.getElementById("resultado").innerText = 
+                `A média das idades das 20 pessoas é: ${mediaIdades.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

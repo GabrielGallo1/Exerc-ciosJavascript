@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Soma de 10 Números</title>
+</head>
+<body>
+    <h1>Calculadora de Soma de 10 Números</h1>
+    
+    <p>Insira 10 números abaixo:</p>
+    
+    <input type="number" id="numero1" step="any"> <!-- Input para o número 1 -->
+    <br><br>
+    <input type="number" id="numero2" step="any"> <!-- Input para o número 2 -->
+    <br><br>
+    <input type="number" id="numero3" step="any"> <!-- Input para o número 3 -->
+    <br><br>
+    <input type="number" id="numero4" step="any"> <!-- Input para o número 4 -->
+    <br><br>
+    <input type="number" id="numero5" step="any"> <!-- Input para o número 5 -->
+    <br><br>
+    <input type="number" id="numero6" step="any"> <!-- Input para o número 6 -->
+    <br><br>
+    <input type="number" id="numero7" step="any"> <!-- Input para o número 7 -->
+    <br><br>
+    <input type="number" id="numero8" step="any"> <!-- Input para o número 8 -->
+    <br><br>
+    <input type="number" id="numero9" step="any"> <!-- Input para o número 9 -->
+    <br><br>
+    <input type="number" id="numero10" step="any"> <!-- Input para o número 10 -->
+    <br><br>
+    
+    <button onclick="calcularSoma()">Calcular Soma</button>
+    
+    <p id="resultado"></p>
+    
+    <script>
+        function calcularSoma() {
+            // Array para armazenar os números digitados pelo usuário
+            const numeros = [
+                parseFloat(document.getElementById("numero1").value),
+                parseFloat(document.getElementById("numero2").value),
+                parseFloat(document.getElementById("numero3").value),
+                parseFloat(document.getElementById("numero4").value),
+                parseFloat(document.getElementById("numero5").value),
+                parseFloat(document.getElementById("numero6").value),
+                parseFloat(document.getElementById("numero7").value),
+                parseFloat(document.getElementById("numero8").value),
+                parseFloat(document.getElementById("numero9").value),
+                parseFloat(document.getElementById("numero10").value)
+            ];
+            
+            // Calculando a soma dos números
+            const soma = numeros.reduce((acc, num) => acc + num, 0);
+            
+            // Exibindo o resultado
+            document.getElementById("resultado").innerText = 
+                `A soma dos 10 números é: ${soma}`;
+        }
+    </script>
+</body>
+</html>

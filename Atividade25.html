@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Soma de Números</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Soma de Números</h1>
+    
+    <form id="formulario">
+        <label for="numero">Digite um número (digite um número negativo para encerrar):</label>
+        <input type="number" id="numero" step="any">
+        <br><br>
+        <button type="button" onclick="calcularSoma()">Adicionar Número</button>
+    </form>
+
+    <p id="resultado"></p>
+    
+    <script>
+        function calcularSoma() {
+            let soma = 0;
+            let numero = parseFloat(document.getElementById("numero").value);
+
+            // Verifica se o número é negativo para encerrar
+            if (numero < 0 || isNaN(numero)) {
+                // Exibe o resultado da soma
+                document.getElementById("resultado").innerText = `A soma dos números é: ${soma}`;
+            } else {
+                // Soma o número ao total
+                soma += numero;
+
+                // Limpa o campo de entrada
+                document.getElementById("numero").value = "";
+
+                // Atualiza o campo de resultado
+                document.getElementById("resultado").innerText = `A soma parcial é: ${soma}`;
+            }
+        }
+    </script>
+</body>
+</html>
